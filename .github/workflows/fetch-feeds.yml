@@ -35,10 +35,3 @@ jobs:
           git add src/content/blog/
           git commit -m "📰 Mise à jour des flux RSS"
           git push
-
-  # Déploie automatiquement après le fetch si des articles ont changé
-  deploy:
-    needs: fetch
-    if: needs.fetch.outputs.changed == 'true'
-    uses: ./.github/workflows/deploy.yml
-    secrets: inherit

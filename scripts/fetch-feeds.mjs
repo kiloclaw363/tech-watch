@@ -21,21 +21,23 @@ const FEEDS = [
   { url: 'https://blog.google/technology/ai/rss/', category: 'IA', source: 'Google AI Blog' },
   { url: 'https://huggingface.co/blog/feed.xml', category: 'IA', source: 'Hugging Face' },
 
-  // Cloud
+  // Cloud (souverain + enterprise)
   { url: 'https://blog.ovhcloud.com/feed/', category: 'Cloud', source: 'OVHcloud' },
-  { url: 'https://www.docker.com/blog/feed/', category: 'DevOps', source: 'Docker Blog' },
+  { url: 'https://www.redhat.com/en/rss/blog', category: 'Cloud', source: 'Red Hat Blog' },
 
-  // DevOps / Infra
-  { url: 'https://www.cncf.io/blog/feed/', category: 'DevOps', source: 'CNCF' },
-  { url: 'https://kubernetes.io/feed.xml', category: 'DevOps', source: 'Kubernetes Blog' },
+  // Kubernetes
+  { url: 'https://kubernetes.io/feed.xml', category: 'Kubernetes', source: 'Kubernetes Blog' },
+  { url: 'https://www.cncf.io/blog/feed/', category: 'Kubernetes', source: 'CNCF' },
 
-  // Sys / Réseau / Sécurité
+  // Containers
+  { url: 'https://www.docker.com/blog/feed/', category: 'Containers', source: 'Docker Blog' },
+
+  // Sécurité
   { url: 'https://www.bleepingcomputer.com/feed/', category: 'Sécurité', source: 'BleepingComputer' },
-  { url: 'https://feeds.arstechnica.com/arstechnica/technology-lab', category: 'Sys-Réseau', source: 'Ars Technica' },
 
-  // Veille générale
-  { url: 'https://dev.to/feed', category: 'Dev', source: 'Dev.to' },
-  { url: 'https://thenewstack.io/feed/', category: 'Cloud-Native', source: 'The New Stack' },
+  // Sys / Réseau
+  { url: 'https://feeds.arstechnica.com/arstechnica/technology-lab', category: 'Sys-Réseau', source: 'Ars Technica' },
+  { url: 'https://www.phoronix.com/rss.php', category: 'Sys-Réseau', source: 'Phoronix' },
 ];
 
 // ─── FETCH & PARSE ───────────────────────────────────────────────────

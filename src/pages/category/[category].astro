@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
+const base = import.meta.env.BASE_URL;
+
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   const categories = [...new Set(posts.map(p => p.data.category))];
@@ -20,14 +22,14 @@ export async function getStaticPaths() {
 const { category, posts } = Astro.props;
 ---
 
-<BaseLayout title={`${category} — Veille Tech IT`}`}>
-  <a href="/" class="back-link">← Retour</a>
+<BaseLayout title={`${category} — Veille Tech IT`}>
+  <a href={base} class="back-link">← Retour</a>
   <h1>{category}</h1>
 
   <section class="posts">
     {posts.map(post => (
       <article class="card">
-        <a href={`/blog/${post.slug}`}>
+        <a href={`${base}blog/${post.slug}`}>
           <h2>{post.data.title}</h2>
         </a>
         <p class="meta">

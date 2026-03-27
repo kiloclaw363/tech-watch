@@ -18,7 +18,7 @@ const { title } = Astro.props;
   <body>
     <header>
       <nav>
-        <a href="/" class="logo">🦊 Tech Watch</a>
+        <a href={import.meta.env.BASE_URL} class="logo">🦊 Tech Watch</a>
       </nav>
     </header>
     <main>

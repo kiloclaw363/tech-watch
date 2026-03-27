@@ -9,24 +9,38 @@ const posts = (await getCollection('blog')).sort(
 );
 
 const categories = [...new Set(posts.map(p => p.data.category))];
+const categoryCounts = Object.fromEntries(
+  categories.map(cat => [cat, posts.filter(p => p.data.category === cat).length])
+);
 ---
 
 <BaseLayout title="Veille Tech IT">
   <div class="hero">
     <h1>🦊 Veille Technologique IT</h1>
-    <p>IA · Cloud · Kubernetes · Containers · Sécurité · Sys/Réseaux</p>
+    <p>{posts.length} articles · {categories.length} catégories</p>
   </div>
 
-  <nav class="categories">
-    <a href={base} class="tag active">Tout</a>
-    {categories.map(cat => (
-      <a href={`${base}category/${cat.toLowerCase()}`} class="tag">{cat}</a>
-    ))}
-  </nav>
+  <div class="controls">
+    <input
+      type="search"
+      id="search"
+      placeholder="Rechercher un article..."
+      class="search-input"
+      autocomplete="off"
+    />
+    <nav class="categories" id="categories">
+      <button class="tag active" data-cat="all">Tout ({posts.length})</button>
+      {categories.map(cat => (
+        <button class="tag" data-cat={cat}>{cat} ({categoryCounts[cat]})</button>
+      ))}
+    </nav>
+  </div>
 
-  <section class="posts">
+  <p id="results-count" class="results-count">{posts.length} résultats</p>
+
+  <section class="posts" id="posts">
     {posts.map(post => (
-      <article class="card">
+      <article class="card" data-category={post.data.category} data-title={post.data.title.toLowerCase()} data-desc={(post.data.description || '').toLowerCase()}>
         <span class="category-badge">{post.data.category}</span>
         <a href={`${base}blog/${post.slug}`}>
           <h2>{post.data.title}</h2>
@@ -41,4 +55,38 @@ const categories = [...new Set(posts.map(p => p.data.category))];
       </article>
     ))}
   </section>
+
+  <script is:inline>
+    (() => {
+      const search = document.getElementById('search');
+      const cats = document.getElementById('categories');
+      const posts = document.querySelectorAll('.card');
+      const count = document.getElementById('results-count');
+      let activeCat = 'all';
+
+      function filter() {
+        const q = search.value.toLowerCase().trim();
+        let shown = 0;
+        posts.forEach(el => {
+          const matchCat = activeCat === 'all' || el.dataset.category === activeCat;
+          const matchQ = !q || el.dataset.title.includes(q) || el.dataset.desc.includes(q);
+          const visible = matchCat && matchQ;
+          el.style.display = visible ? '' : 'none';
+          if (visible) shown++;
+        });
+        count.textContent = `${shown} résultat${shown !== 1 ? 's' : ''}`;
+      }
+
+      cats.addEventListener('click', e => {
+        const btn = e.target.closest('.tag');
+        if (!btn) return;
+        cats.querySelectorAll('.tag').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCat = btn.dataset.cat;
+        filter();
+      });
+
+      search.addEventListener('input', filter);
+    })();
+  </script>
 </BaseLayout>

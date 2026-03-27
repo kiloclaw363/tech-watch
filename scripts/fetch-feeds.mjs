@@ -23,11 +23,11 @@ const FEEDS = [
 
   // Cloud
   { url: 'https://blog.ovhcloud.com/feed/', category: 'Cloud', source: 'OVHcloud' },
-  { url: 'https://www.scaleway.com/en/blog/feed/', category: 'Cloud', source: 'Scaleway' },
+  { url: 'https://www.docker.com/blog/feed/', category: 'DevOps', source: 'Docker Blog' },
 
   // DevOps / Infra
   { url: 'https://www.cncf.io/blog/feed/', category: 'DevOps', source: 'CNCF' },
-  { url: 'https://blog.alexellis.io/rss.xml', category: 'DevOps', source: 'Alex Ellis' },
+  { url: 'https://kubernetes.io/feed.xml', category: 'DevOps', source: 'Kubernetes Blog' },
 
   // Sys / Réseau / Sécurité
   { url: 'https://www.bleepingcomputer.com/feed/', category: 'Sécurité', source: 'BleepingComputer' },

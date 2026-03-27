@@ -8,7 +8,7 @@
  */
 
 import { parseStringPromise } from 'xml2js';
-import { writeFileSync, mkdirSync } from 'fs';
+import { writeFileSync, mkdirSync, existsSync, readdirSync, unlinkSync, statSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -102,22 +102,71 @@ async function main() {
 
   console.log(`📡 Récupération de ${FEEDS.length} flux...\n`);
 
+  // ─── DÉDUPPLICATION : fichiers existants ───────────────────────────
+  const existingSlugs = new Set(
+    readdirSync(BLOG_DIR)
+      .filter(f => f.endsWith('.md'))
+      .map(f => f.replace(/\.md$/, ''))
+  );
+
+  // ─── NETTOYAGE : supprimer les articles > 30 jours ─────────────────
+  const maxAge = 30 * 24 * 60 * 60 * 1000; // 30 jours en ms
+  const now = Date.now();
+  let cleaned = 0;
+
+  for (const file of readdirSync(BLOG_DIR).filter(f => f.endsWith('.md'))) {
+    const filepath = join(BLOG_DIR, file);
+    const stat = statSync(filepath);
+    if (now - stat.mtimeMs > maxAge) {
+      unlinkSync(filepath);
+      cleaned++;
+    }
+  }
+  if (cleaned > 0) console.log(`🗑️  ${cleaned} articles supprimés (>30 jours)\n`);
+
+  // ─── FETCH ─────────────────────────────────────────────────────────
   let total = 0;
+  let newCount = 0;
+  let skipped = 0;
+
   for (const feed of FEEDS) {
     const items = await fetchFeed(feed.url);
     console.log(`  ${feed.source}: ${items.length} articles`);
 
     for (const item of items) {
       const slug = `${slugify(item.title)}-${item.pubDate.toISOString().split('T')[0]}`;
+
+      if (existingSlugs.has(slug)) {
+        skipped++;
+        continue;
+      }
+
       const filepath = join(BLOG_DIR, `${slug}.md`);
       const content = toFrontmatter({ ...item, ...feed });
 
       writeFileSync(filepath, content, 'utf-8');
       total++;
+      newCount++;
     }
   }
 
-  console.log(`\n✅ ${total} articles générés dans src/content/blog/`);
+  // ─── TIMESTAMP ─────────────────────────────────────────────────────
+  const fetchInfo = {
+    lastFetch: new Date().toISOString(),
+    articlesTotal: total,
+    articlesNew: newCount,
+    articlesSkipped: skipped,
+    articlesCleaned: cleaned,
+    sources: FEEDS.length,
+  };
+  writeFileSync(
+    join(__dirname, '..', 'last-fetch.json'),
+    JSON.stringify(fetchInfo, null, 2),
+    'utf-8'
+  );
+
+  console.log(`\n✅ ${newCount} nouveaux articles (${skipped} déjà existants, ${cleaned} nettoyés)`);
+  console.log(`📊 Total dans le dossier: ${readdirSync(BLOG_DIR).filter(f => f.endsWith('.md')).length} articles`);
 }
 
 main().catch(console.error);

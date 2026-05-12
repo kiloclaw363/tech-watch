@@ -1,0 +1,10 @@
+---
+title: "Docker AI Governance: Unlock Agent Autonomy, Safely"
+description: "Introducing Docker AI Governance: centralized control over how agents execute, what they can reach on the network, which credentials they can use, and which MCP tools they can call, so every developer in your company can run AI agents safely, wherever they work. Your laptop is the new prod Agents ar"
+pubDate: 2026-05-12
+category: "Containers"
+source: "Docker Blog"
+link: "https://www.docker.com/blog/docker-ai-governance-unlock-agent-autonomy-safely/"
+---
+
+Introducing Docker AI Governance: centralized control over how agents execute, what they can reach on the network, which credentials they can use, and which MCP tools they can call, so every developer in your company can run AI agents safely, wherever they work. Your laptop is the new prod Agents ar

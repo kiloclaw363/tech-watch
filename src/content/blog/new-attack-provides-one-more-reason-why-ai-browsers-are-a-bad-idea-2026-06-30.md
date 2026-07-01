@@ -1,0 +1,10 @@
+---
+title: "New attack provides one more reason why AI browsers are a bad idea"
+description: "Telling an LLM that 2 + 2 = 5 is enough to make it follow forbidden instructions."
+pubDate: 2026-06-30
+category: "Sys-Réseau"
+source: "Ars Technica"
+link: "https://arstechnica.com/security/2026/06/ai-browsers-can-be-lulled-into-a-dream-world-where-guardrails-no-longer-apply/"
+---
+
+Telling an LLM that 2 + 2 = 5 is enough to make it follow forbidden instructions.

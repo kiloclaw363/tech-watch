@@ -1,0 +1,10 @@
+---
+title: "AMD EPYC Zen 7 \"Florence\" Confirmed With ACE, Next-Gen Memory"
+description: "After announcing the AMD EPYC 9006 \"Venice\" processors today at AMD Advancing AI 2026, Lisa Su ended her keynote by confirming EPYC Zen 7 \"Florence\" details as well as EPYC Zen 8 \"Ravenna\" being in development..."
+pubDate: 2026-07-23
+category: "Sys-Réseau"
+source: "Phoronix"
+link: "https://www.phoronix.com/news/AMD-EPYC-Zen-7-Florence-Zen-8"
+---
+
+After announcing the AMD EPYC 9006 "Venice" processors today at AMD Advancing AI 2026, Lisa Su ended her keynote by confirming EPYC Zen 7 "Florence" details as well as EPYC Zen 8 "Ravenna" being in development...

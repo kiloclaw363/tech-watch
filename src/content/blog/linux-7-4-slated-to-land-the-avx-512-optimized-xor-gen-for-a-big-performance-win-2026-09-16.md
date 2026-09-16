@@ -1,0 +1,10 @@
+---
+title: "Linux 7.4 Slated To Land The AVX-512 Optimized xor_gen For A Big Performance Win"
+description: "Over the past few months there have been patches floating around for an AVX-512 optimized xor_gen() for the Linux kernel for that functuon used by the Linux software RAID code. It's been shhowing very nice performance gains with this function being used for generating and validating parity blocks su"
+pubDate: 2026-09-16
+category: "Sys-Réseau"
+source: "Phoronix"
+link: "https://www.phoronix.com/news/Linux-7.4-Land-AVX-512-xor-gen"
+---
+
+Over the past few months there have been patches floating around for an AVX-512 optimized xor_gen() for the Linux kernel for that functuon used by the Linux software RAID code. It's been shhowing very nice performance gains with this function being used for generating and validating parity blocks su

@@ -1,0 +1,10 @@
+---
+title: "OpenTelemetry everywhere: Migrating a metrics platform at scale"
+description: "Why we did this at all For most of the last decade our metrics pipeline ran on gostatsd, the open-source StatsD implementation we maintain. It primarily did two jobs: as sidecar on every host and the..."
+pubDate: 2026-09-17
+category: "Kubernetes"
+source: "CNCF"
+link: "https://www.cncf.io/blog/2026/09/17/opentelemetry-everywhere-migrating-a-metrics-platform-at-scale/"
+---
+
+Why we did this at all For most of the last decade our metrics pipeline ran on gostatsd, the open-source StatsD implementation we maintain. It primarily did two jobs: as sidecar on every host and the...

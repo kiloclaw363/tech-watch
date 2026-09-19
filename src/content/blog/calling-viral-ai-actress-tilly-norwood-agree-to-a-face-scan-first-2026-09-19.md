@@ -1,0 +1,10 @@
+---
+title: "Calling viral AI actress Tilly Norwood? Agree to a face scan first"
+description: "AI actress Tilly Norwood went viral after glitching into Chinese on Piers Morgan Uncensored last night. Her \"Talking Tilly\" video call service face-scans every caller for an 18+ age check, senses callers' moods during calls, and shuts down permanently on September 27. We tried it and read the fine p"
+pubDate: 2026-09-19
+category: "Sécurité"
+source: "BleepingComputer"
+link: "https://www.bleepingcomputer.com/news/security/calling-viral-ai-actress-tilly-norwood-agree-to-a-face-scan-first/"
+---
+
+AI actress Tilly Norwood went viral after glitching into Chinese on Piers Morgan Uncensored last night. Her "Talking Tilly" video call service face-scans every caller for an 18+ age check, senses callers' moods during calls, and shuts down permanently on September 27. We tried it and read the fine p

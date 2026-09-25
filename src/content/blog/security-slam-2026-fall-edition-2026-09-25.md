@@ -1,0 +1,10 @@
+---
+title: "Security Slam 2026 – Fall edition"
+description: "Security Slam 2026 – Fall Edition is a 30-day virtual event from October 5 through November 6, 2026. What Is the Security Slam? The Open Source Security Foundation (OpenSSF) is partnering with the Cloud Native Computing..."
+pubDate: 2026-09-25
+category: "Kubernetes"
+source: "CNCF"
+link: "https://www.cncf.io/blog/2026/09/25/security-slam-2026-fall-edition/"
+---
+
+Security Slam 2026 – Fall Edition is a 30-day virtual event from October 5 through November 6, 2026. What Is the Security Slam? The Open Source Security Foundation (OpenSSF) is partnering with the Cloud Native Computing...

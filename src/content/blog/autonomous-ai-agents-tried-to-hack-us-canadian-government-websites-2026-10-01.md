@@ -1,0 +1,10 @@
+---
+title: "Autonomous AI agents tried to hack US, Canadian government websites"
+description: "Autonomous AI agents using aggressive strategies attempted to hack U.S. and Canadian government websites to find school and divorce statistics. [...]"
+pubDate: 2026-10-01
+category: "Sécurité"
+source: "BleepingComputer"
+link: "https://www.bleepingcomputer.com/news/security/autonomous-ai-agents-tried-to-hack-us-canadian-government-websites/"
+---
+
+Autonomous AI agents using aggressive strategies attempted to hack U.S. and Canadian government websites to find school and divorce statistics. [...]

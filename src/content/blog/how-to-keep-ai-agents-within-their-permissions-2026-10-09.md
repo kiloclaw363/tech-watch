@@ -1,0 +1,10 @@
+---
+title: "How to keep AI agents within their permissions"
+description: "AI agents can use valid credentials to perform actions beyond their assigned permissions, creating risks that traditional access controls may not prevent. Token Security explains how organizations can enforce agent-specific policies without sacrificing autonomy. [...]"
+pubDate: 2026-10-09
+category: "Sécurité"
+source: "BleepingComputer"
+link: "https://www.bleepingcomputer.com/news/security/how-to-keep-ai-agents-within-their-permissions/"
+---
+
+AI agents can use valid credentials to perform actions beyond their assigned permissions, creating risks that traditional access controls may not prevent. Token Security explains how organizations can enforce agent-specific policies without sacrificing autonomy. [...]
